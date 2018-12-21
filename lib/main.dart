@@ -12,7 +12,23 @@ class FriendlyChatApp extends StatelessWidget {
   }
 }
 
-class ChatScreen extends StatelessWidget {
+// class ChatScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return new Scaffold(
+//       appBar: new AppBar(
+//         title: new Text('Friendly Chat'),
+//       ),
+//     );
+//   }
+// }
+
+class ChatScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => new ChatScreenState();
+}
+
+class ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
