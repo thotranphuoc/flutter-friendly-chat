@@ -43,10 +43,24 @@ class ChatScreenState extends State<ChatScreen> {
   Widget _buildTextComposer() {
     return new Container(
       margin: const EdgeInsets.symmetric(horizontal: 0.0),
-      child: new TextField(
-        controller: _textController,
-        onSubmitted: _handleSubmitted,
-        decoration: new InputDecoration.collapsed(hintText: "Send a miessage"),
+      child: new Row(
+        children: <Widget>[
+          new Flexible(
+            child: new TextField(
+              controller: _textController,
+              onSubmitted: _handleSubmitted,
+              decoration:
+                  new InputDecoration.collapsed(hintText: "Send a miessage"),
+            ),
+          ),
+          new Container(
+            margin: const EdgeInsets.symmetric(horizontal: 0.0),
+            child: new IconButton(
+              icon: new Icon(Icons.send),
+              onPressed: () => _handleSubmitted(_textController.text),
+            ),
+          )
+        ],
       ),
     );
   }
